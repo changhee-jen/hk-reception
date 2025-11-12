@@ -1,0 +1,240 @@
+:root {
+  --bg-color: #f5f6fa;
+  --primary-color: #2f80ed;
+  --primary-dark: #1c5bbf;
+  --text-color: #2d3436;
+  --muted-text: #636e72;
+  --card-bg: #ffffff;
+  --border-color: #dfe6e9;
+  --success: #27ae60;
+  --error: #e74c3c;
+  --info: #3498db;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.top-nav {
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+nav {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.link-button {
+  background: transparent;
+  border: none;
+  color: var(--muted-text);
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  font-size: 1rem;
+}
+
+.link-button:hover {
+  color: var(--primary-color);
+}
+
+.content {
+  flex: 1;
+  width: min(960px, 90%);
+  margin: 2.5rem auto;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 20px 45px rgba(15, 35, 95, 0.12);
+}
+
+.form-card {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.form {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.form label {
+  font-weight: 500;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.form input {
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(47, 128, 237, 0.15);
+  outline: none;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.85rem 1.5rem;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(47, 128, 237, 0.35);
+}
+
+.btn.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 15px 35px rgba(47, 128, 237, 0.4);
+}
+
+.btn.secondary {
+  background: #eff4ff;
+  color: var(--primary-color);
+  border: 1px solid rgba(47, 128, 237, 0.25);
+}
+
+.btn.secondary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(47, 128, 237, 0.18);
+}
+
+.form-helper {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: var(--muted-text);
+}
+
+.form-helper .link-button {
+  font-weight: 700;
+}
+
+.status {
+  padding: 0.85rem 1.2rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.status[data-tone='info'] {
+  background: rgba(52, 152, 219, 0.12);
+  color: var(--info);
+}
+
+.status[data-tone='success'] {
+  background: rgba(39, 174, 96, 0.12);
+  color: var(--success);
+}
+
+.status[data-tone='error'] {
+  background: rgba(231, 76, 60, 0.12);
+  color: var(--error);
+}
+
+.home-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.muted {
+  color: var(--muted-text);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.panel {
+  background: #f9fbff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(47, 128, 237, 0.15);
+  display: grid;
+  gap: 0.75rem;
+}
+
+.panel-icon {
+  font-size: 2.25rem;
+}
+
+.footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  color: var(--muted-text);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .top-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .content {
+    width: min(100%, 92%);
+    margin: 1.5rem auto;
+  }
+
+  .card {
+    padding: 1.75rem;
+  }
+
+  .home-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    flex-wrap: wrap;
+  }
+}
