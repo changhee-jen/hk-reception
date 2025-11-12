@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HK Reception</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="top-nav">
+      <div class="brand">HK Reception</div>
+      <nav>
+        <button id="nav-login" class="link-button">로그인</button>
+        <button id="nav-register" class="link-button">회원가입</button>
+        <button id="nav-home" class="link-button hidden">메인</button>
+        <button id="nav-logout" class="link-button hidden">로그아웃</button>
+      </nav>
+    </header>
+
+    <main class="content">
+      <section id="status-panel" class="status hidden"></section>
+
+      <section id="login-panel" class="card form-card">
+        <h1>로그인</h1>
+        <form id="login-form" class="form" autocomplete="off">
+          <label>
+            아이디
+            <input type="text" name="username" autocomplete="username" required />
+          </label>
+          <label>
+            비밀번호
+            <input
+              type="password"
+              name="password"
+              autocomplete="current-password"
+              required
+            />
+          </label>
+          <button type="submit" class="btn primary">로그인</button>
+        </form>
+        <p class="form-helper">계정이 없으신가요? <button class="link-button" data-target="register">회원가입</button></p>
+      </section>
+
+      <section id="register-panel" class="card form-card hidden">
+        <h1>회원가입</h1>
+        <form id="register-form" class="form" autocomplete="off">
+          <label>
+            이름
+            <input type="text" name="name" autocomplete="name" required />
+          </label>
+          <label>
+            아이디
+            <input type="text" name="username" autocomplete="username" required />
+          </label>
+          <label>
+            비밀번호
+            <input type="password" name="password" autocomplete="new-password" required />
+          </label>
+          <label>
+            비밀번호 확인
+            <input
+              type="password"
+              name="confirm_password"
+              autocomplete="new-password"
+              required
+            />
+          </label>
+          <button type="submit" class="btn primary">회원가입</button>
+        </form>
+        <p class="form-helper">이미 계정이 있으신가요? <button class="link-button" data-target="login">로그인</button></p>
+      </section>
+
+      <section id="home-panel" class="card hidden">
+        <header class="home-header">
+          <div>
+            <h1 id="home-greeting">환영합니다!</h1>
+            <p class="muted" id="home-subtitle">방문자 응대를 시작해볼까요?</p>
+          </div>
+          <button id="home-logout" class="btn secondary">로그아웃</button>
+        </header>
+
+        <div class="grid" id="dashboard-grid"></div>
+      </section>
+    </main>
+
+    <footer class="footer">© 2024 HK Reception</footer>
+
+    <script src="js/app.js" defer></script>
+  </body>
+</html>
